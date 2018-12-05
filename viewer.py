@@ -34,8 +34,6 @@ for i in artigo:
      imagem = i.find('img', class_='croppable')
      print(texto)
      exit()
-
-
 #    print(titles[i].get_text(),"by",end=' ')
 #    print(authors[i].get_text(),end=' ')
 #    print("costs $" + prices[i].get_text())
