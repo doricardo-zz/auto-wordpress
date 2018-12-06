@@ -4,6 +4,7 @@ from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.compat import xmlrpc_client
 from wordpress_xmlrpc.methods import media, posts
 from wordpress_xmlrpc.methods.posts import NewPost
+import json
 
 def post(filename):
     wp = Client('https://doricardo.com/images/xmlrpc.php', 'doricardo', 'Raca@0608')
@@ -32,11 +33,20 @@ def post(filename):
 
     attachment_id = response['id']
 
-    fonte = open('post.txt','r')
-    content = fonte.read()
+    #fonte = open('post.txt','r')
+    #content = fonte.read()
+    with open('post_model.json') as fonte:
+        data = json.load(fonte)
+        title = data['title']
+        description = data['description']
+        urlmedia = data['media']
+        category = data['category']
+        tags = data['tags']
+        print(title + " " + description)
+
     post = WordPressPost()
-    post.title = "POST COM THUMBNAIL"
-    post.content = content
+    post.title = title
+    post.content = description
     post.post_status = 'publish'
     post.thumbnail = attachment_id
 

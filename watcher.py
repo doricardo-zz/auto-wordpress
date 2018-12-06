@@ -5,7 +5,7 @@ import post
 
 class Watcher:
     DIRECTORY_TO_WATCH = "/path/to/my/directory"
-    DIRECTORY_TO_WATCH = "/Users/ricardoacandrade/Dropbox/Desenvolvimento/Python/wordpress"
+    DIRECTORY_TO_WATCH = "/Users/ricardoacandrade/Documents/GitHub/wordpress"
 
     def __init__(self):
         self.observer = Observer()
