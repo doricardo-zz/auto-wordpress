@@ -7,7 +7,7 @@ from wordpress_xmlrpc.methods.posts import NewPost
 import json
 
 def post(filename):
-    wp = Client('https://doricardo.com/images/xmlrpc.php', 'doricardo', 'Raca@0608')
+    wp = Client('https://doricardo.com/images/xmlrpc.php', 'user', 'pass')
 
     # set to the path to your file
     filename = '/path/to/my/post.jpg'
